@@ -2,9 +2,7 @@
 
 ## Description
 
-The "Othello Game" is a desktop application that allows users to play the classic board game Othello. 
-Users can choose to play against another player or the computer with varying levels of difficulty. 
-The game includes a graphical user interface for an engaging playing experience.
+test
 
 ## Main functionality
 1. Play against a computer or another player.
