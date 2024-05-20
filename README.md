@@ -29,7 +29,7 @@ The game includes a graphical user interface for an engaging playing experience.
 | <img height="50" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7uwLyomLuj-z2wdukzRfaViu2o_urpD0h8eOGOdtcLQ&s">	        | JavaScript  |
 | <img height="50" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEvudtN4NwY9uzAFdm7HS3t6KXE0Uw1rvFciuANFQkAQ&s">	        | AJAX  |
 | <img height="50" src="https://global.discourse-cdn.com/auth0/original/3X/d/8/d8e87cc1ffe6637a6b8b076e976fa408f8b2d52e.png">	        | Django  |
-| <img height="50" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Pygame_logo.svg/2560px-Pygame_logo.svg.png"> | SQlite    |
+| <img height="50" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK-F27_MERDnxTvwVSbdvmR_xU7HPAgjVZGg_2cBj1Cw&s"> | SQlite    |
 
 ## Run Locally
 
