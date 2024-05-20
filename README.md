@@ -2,20 +2,40 @@
 
 ## Description
 
-test
+The FCI Student Management System is a web application developed as part of a web development course. 
+This project was designed to help students practice and apply various concepts and techniques learned during the course. 
+The application is intended for managing student information within the Faculty of Computers and Information (FCI).
 
-## Main functionality
-1. Play against a computer or another player.
-   
-2. Choose difficulty levels when playing against the computer.
-   
-3. Interactive game board with visual feedback for valid moves.
-   
-4. Score tracking and display during gameplay.
-   
-5. Resize the window while maintaining board proportions.
+## Features
+User Management:
 
-## Tools and languages used in Project
+1. Add new students with details such as ID, name, date of birth, GPA, gender, level, status, department, email, and mobile number.
+   
+2. Update existing student information (with the department field disabled for editing).
+   
+3. Delete student data with confirmation prompts to ensure data integrity.
+
+Search and Assignment:
+
+1. Search for active students by name, displaying results in a table format.
+   
+2. Assign departments to students at level 3, with error handling for invalid actions.
+   
+Status Management:
+
+1. View all active and inactive students in a table.
+
+2. Change student status between active and inactive directly from the table.
+
+Navigation and Design:
+
+1. A common homepage listing all potential projects (Human Resources, Student Affairs, Higher Studies, Laboratory Tracking).
+
+2. Well-designed navigation bar for seamless access to all functionalities.
+
+3. Frontend validations and dynamic content handling using JavaScript.
+
+4. CSS for styling to create a user-friendly interface.
 
 | Icon                                                                                                                                 | Tech   |
 | ------------------------------------------------------------------------------------------------------------------------------------ | ------ |
