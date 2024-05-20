@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="no-js" lang="">
+
+<head>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/edit.css' %}">
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <title>ID Exists</title>
+    <meta charset="UTF-8">
+    <meta name="descrption" content="page to view student data" />
+</head>
+
+<body>
+    <div class="sidebar">
+        <ol class="sidebar-list">
+            <li id="logo-item">
+                <img src="{% static 'img/student.png' %}">
+            </li>
+            <li class="nav-item">
+                <a href="/main/">
+                    <img src="{% static 'img/home.png' %}">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/view/">
+                    <img src="{% static 'img/table.png' %}">
+                    <span>View Table</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/add/">
+                    <img src="{% static 'img/add.png' %}">
+                    <span>Add Student</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/update/">
+                    <img src="{% static 'img/edit.png' %}">
+                    <span>Update Depart</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/edit/">
+                    <img src="{% static 'img/update.png' %}">
+                    <span>Edit Info</span>
+                </a>
+            </li>
+        </ol>
+    </div>
+
+    <div class="middle-page">
+        <div id="container">
+            <form class="card-form" id="id-exists-form">
+                {% csrf_token %}
+                <h1 id="header-dep" style="font-size: 28px; color: black">Edit Information</h1>
+                <div class="error-message" id="id-error" style="display: none; color: #a32920;margin-bottom: 10px;">ID not found</div>
+                <div class="input">
+                    <input type="number" name="ID" class="input-field" required />
+                    <label class="input-label">ID</label>
+                </div>
+                <div class="action">
+                    <button class="action-button" type="submit">Update Information</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Handle form submission using AJAX
+        document.getElementById('id-exists-form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent default form submission
+
+            var form = event.target;
+            var formData = new FormData(form);
+
+            // Send AJAX request to check if ID exists
+            fetch('/edit/', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.exists) {
+                        window.location.href = '/edit/' + data.student_id + '/';
+                    } else {
+                        var errorElement = document.getElementById('id-error');
+                        errorElement.style.display = 'block';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        });
+    </script>
+
+</body>
+
+</html>

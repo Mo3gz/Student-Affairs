@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="no-js" lang="">
+
+<head>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/edit.css' %}">
+  <link rel="stylesheet" href="{% static 'css/edit2.css' %}">
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <title>Edit Information</title>
+  <meta charset="UTF-8">
+  <meta name="descrption" content="page to view student data" />
+</head>
+
+<body>
+  <div class="sidebar">
+    <ol class="sidebar-list">
+      <li id="logo-item">
+        <img src="{% static 'img/student.png' %}">
+      </li>
+      <li class="nav-item">
+        <a href="/main/">
+          <img src="{% static 'img/home.png' %}">
+          <span>Home</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/view/">
+          <img src="{% static 'img/table.png' %}">
+          <span>View Table</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/add/">
+          <img src="{% static 'img/add.png' %}">
+          <span>Add Student</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/update/">
+          <img src="{% static 'img/edit.png' %}">
+          <span>Update Depart</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/edit/">
+          <img src="{% static 'img/update.png' %}">
+          <span>Edit Info</span>
+        </a>
+      </li>
+    </ol>
+  </div>
+
+  <div class="middle-page">
+    <div id="container">
+      <form class="card-form" method="POST">
+        {% csrf_token %}
+        <h1 id="header-dep" style="font-size: 28px; color: black">Edit Information</h1>
+        <div id="error-field" class="error-field" style="color : #a32920;"></div>
+        <div class="input">
+          <input type="number" name="NatID" id="natIdInput" class="input-field" value="{{ student.SSN }}" required />
+          <label class="input-label">National ID</label>
+        </div>
+        <div class="input">
+          <input type="text" name="Name" id="nameInput" class="input-field" value="{{ student.Name }}" required />
+          <label class="input-label">Full name</label>
+        </div>
+        <div class="input">
+          <input type="number" name="Gpa" id="gpaInput" class="input-field" value="{{ student.Gpa }}" required />
+          <label class="input-label">GPA</label>
+        </div>
+        <div class="sData-Selectors">
+          <select name="Level">
+            <option value="1" {% if student.Level == 1 %}selected{% endif %}>1</option>
+            <option value="2" {% if student.Level == 2 %}selected{% endif %}>2</option>
+            <option value="3" {% if student.Level == 3 %}selected{% endif %}>3</option>
+            <option value="4" {% if student.Level == 4 %}selected{% endif %}>4</option>
+          </select>
+
+          <select name="Status">
+            <option value="1" {% if student.Status == 1 %}selected{% endif %}>Active</option>
+            <option value="0" {% if student.Status == 0 %}selected{% endif %}>Not Active</option>
+          </select>
+        </div>
+        <div class="action">
+          <button class="action-button" id="subbut" type="submit">Update Information</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script src = "{% static 'js/edit.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+.sidebar{
+    top: 0 ;
+    left: 0;
+    height: 110%;
+    width: 100px;
+    background-color: rgb(186, 182, 182);
+    position: absolute;
+}
+.sidebar:hover{
+    top: 0;
+    left: 0;
+    width: 160px;
+    background-color: rgb(186, 182, 182);
+    position: absolute;
+    #logo-item{
+        margin-left: 25px;
+    }
+}
+
+.mid-area{
+    left: 92px;
+    background-color: green;
+    background-image: url(sigma.png);
+    background-position: 50px 100px;
+    height: 800px ;
+    background-attachment: fixed;
+    background-size: contain ;
+}
+.sidebar-list{
+    position: relative;
+    list-style: none;
+    left: 0px;
+}
+.sidebar ol{
+    position: relative;
+    left: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+.sidebar ol li  {
+    position: relative;
+    padding: 5px 0px 0px 40px ;
+    margin: 50px 0px;
+    height: 20px;
+    display: block;
+    background-color: rgb(186, 182, 182);
+}
+
+#logo-item{
+    padding: 0 0 0 0 ;
+    margin: 0 0 150px 0;
+    height: 75px ;
+}
+
+#logo-item img{
+    display: inline;
+    width: 100px;
+    height: 75px;
+}
+
+.sidebar ol li a{
+    position: relative;
+    padding: 0px;
+    margin: 0px;
+
+    text-decoration: none;
+    color: white;
+
+}
+.nav-item:hover{
+    position: relative;
+    padding: 25px 0px 0px 40px ;
+    margin: 50px 0px;
+    height: 50px;
+    display: block;
+    background-color: rgb(129, 129, 129);
+}
+
+.sidebar ol li a img{
+    position: relative;
+    display: inline;
+}
+.sidebar:hover ol li a img{
+    position: relative;
+    display: inline;
+
+}
+.sidebar ol li a span{
+    position: relative;
+    display: inline;
+    opacity: 0;
+}
+.sidebar ol li a img{
+    height: 20px;
+    width: 20px;
+}
+
+.sidebar:hover ol li a span{
+    position: relative;
+    display: inline;
+    opacity: 1;
+    transition: 0.7s;
+}
+
+.middle-page{
+    margin: 3% 5% 0 10%;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 25px;
+}
+.mid-page-btn{
+    width: 95%;
+    background-color: #132238;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 50px 20px;
+    transition: 0.2s ease 0s;
+}
+.mid-page-btn a{
+    text-decoration: none;
+}
+.btn-lb{
+    text-align: left;
+}

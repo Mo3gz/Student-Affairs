@@ -1,0 +1,22 @@
+body{
+    background-color: rgb(230, 230, 230);
+}
+.itemhpage{
+    background: #132238 no-repeat center;
+    color: white;
+    padding: 40px;
+    border-radius: 30px;
+    margin:10px 200px;
+    text-align: center;
+    font-size: 30px;
+}
+.itemhpage:hover{
+    .editbutton1{
+        background-color: black;
+    }
+}
+.editbutton1{
+    color: #98CCD3;
+    border-radius: 5px;
+    text-decoration: none;
+}

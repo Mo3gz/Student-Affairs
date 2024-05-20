@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>View Table</title>
+        <link rel="stylesheet" href="{% static 'css/view.css' %}">
+    </head>
+    <body>
+        <div class = "main">
+            <div class="sidebar">
+                <ol class="sidebar-list">
+                    <li id="logo-item">
+                        <img src="{% static 'img/student.png' %}">
+                    </li>
+                    <li class="nav-item">
+                        <a href="/main/">
+                            <img src="{% static 'img/home.png' %}">
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/view/">
+                            <img src="{% static 'img/table.png' %}">
+                            <span>View Table</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/add/">
+                            <img src="{% static 'img/add.png' %}">
+                            <span>Add Student</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/update/">
+                            <img src="{% static 'img/edit.png' %}">
+                            <span>Update Depart</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/edit/">
+                            <img src="{% static 'img/update.png' %}">
+                            <span>Edit Info</span>
+                        </a>
+                    </li>
+                </ol>
+            </div>
+            <div class="middle-page">
+                <div id="search-container">
+                    <form>
+                        <div id="input">
+                            <button class="action-button">Search</button>
+                            <input type="text" id="input-field" value="20xxxxxx" required/>
+                        </div>
+                    </form>
+                </div>
+                <table id = "students-data" >
+                    <tr>
+                        <th>Name</th>
+                        <th>ID</th>
+                        <th>GPA</th>
+                        <th>Department</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                    <tbody>
+                        {% for student in students %}
+                            <tr>
+                                <td>{{ student.Name }}</td>
+                                <td>{{ student.student_id }}</td>
+                                <td>{{ student.Gpa }}</td>
+
+                                {% if student.Department == 'none' %}
+                                    <td><span>-</span></td>
+                                {% else %}
+                                    <td>{{ student.Department }}</td>
+                                {% endif %}
+                                
+                                {% if student.Status == 1 %}
+                                    <td><span class="active-dot" style="background: green;"></span></td>
+                                {% else %}
+                                    <td><span class="active-dot"></span></td>
+                                {% endif %}
+
+                                <td><button class="delbtn" onclick="window.location.href='/delete/{{ student.student_id }}';" style="font: inherit;font-size: 16px;height: 20px;width: 85px;font-weight: 500;background-color: #6658d3;border-radius: 6px;color: #FFF;border: 0;">Delete</button></td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <script src="{% static 'js/view.js' %}"></script>
+    </body>
+</html>

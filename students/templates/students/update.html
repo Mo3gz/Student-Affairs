@@ -1,0 +1,131 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Assign Department</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/update.css' %}">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+  <div class = "main">
+    <div class="sidebar">
+      <ol class="sidebar-list">
+        <li id="logo-item">
+          <img src="{% static 'img/student.png' %}">
+        </li>
+        <li class="nav-item">
+          <a href="/main/">
+            <img src="{% static 'img/home.png' %}">
+            <span>Home</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/view/">
+            <img src="{% static 'img/table.png' %}">
+            <span>View Table</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/add/">
+            <img src="{% static 'img/add.png' %}">
+            <span>Add Student</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/update/">
+            <img src="{% static 'img/edit.png' %}">
+            <span>Update Depart</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/edit/">
+            <img src="{% static 'img/update.png' %}">
+            <span>Edit Info</span>
+          </a>
+        </li>
+      </ol>
+    </div>
+
+  <div class="middle-page">
+    <div id="container">
+      <h1 id="header-dep">Assign Department</h1>
+      <form id="update-form">
+        {% csrf_token %}
+        <div id="id-error" style="color: #a32920;margin-bottom: 10px;"></div>
+        <div class="input">
+          <input type="number" name="ID" class="input-field" required />
+          <label class="input-label">ID</label>
+        </div>
+        <div class="sData-Selectors">
+          <select name="department">
+            <option value="">Select Department</option>
+            <option value="cs">CS</option>
+            <option value="ai">AI</option>
+            <option value="it">IT</option>
+            <option value="ds">DS</option>
+          </select>
+        </div>
+        <div class="action">
+          <button class="action-button" type="submit">Update Data</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function () {
+      $('#update-form').submit(function (event) {
+        event.preventDefault();
+        let form = $(this);
+        let idField = form.find('input[name="ID"]');
+        let departmentField = form.find('select[name="department"]');
+        let idValue = idField.val().trim();
+        let departmentValue = departmentField.val();
+    
+        // Check if ID is empty
+        if (idValue === '') {
+          document.getElementById('id-error').innerHTML = 'Please enter an ID.';
+          idField.focus();
+          return;
+        }
+    
+        // Check if department is not selected
+        if (departmentValue === '') {
+          document.getElementById('id-error').innerHTML = 'Please select a department.';
+          departmentField.focus();
+          return;
+        }
+    
+        // Proceed with form submission
+        let url = form.attr('action');
+        let formData = form.serialize();
+    
+        $.ajax({
+          type: 'POST',
+          url: url,
+          data: formData,
+          success: function (response) {
+            window.location.href = '/view/'; 
+            if (response.status === 'success') {
+              alert('Student updated successfully.');
+            } else if (response.status === 'error') {
+              alert('Student does not exist. Please check the ID.');
+            }
+          },
+          error: function (xhr, errmsg, err) {
+            alert('An error occurred while updating the student.');
+          }
+        });
+      });
+    });
+    
+  </script>
+</body>
+
+</html>

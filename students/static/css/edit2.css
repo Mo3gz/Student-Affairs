@@ -1,0 +1,22 @@
+
+.action, .delete{
+    margin-top: 2rem;
+  }
+  
+  .action-button {
+    font: inherit;
+    font-size: 1.25rem;
+    padding: 1em;
+    width: 50%;  
+    font-weight: 500;
+    background-color: #6658d3;
+    border-radius: 6px;
+    color: #FFF;
+    border: 0;
+  }
+  .action-button:hover {
+    background-color: #433b80;
+  }
+  .action-button:focus {
+    outline: 0;
+  }

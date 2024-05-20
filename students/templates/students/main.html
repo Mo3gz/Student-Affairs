@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<body>
+<div class = "main">
+    <div class="sidebar">
+        <ol class="sidebar-list">
+            <li id="logo-item">
+                <img src="{% static 'img/student.png' %}">
+            </li>
+            <li class="nav-item">
+                <a href="/main/">
+                    <img src="{% static 'img/home.png' %}">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/view/">
+                    <img src="{% static 'img/table.png' %}">
+                    <span>View Table</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/add/">
+                    <img src="{% static 'img/add.png' %}">
+                    <span>Add Student</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/update/">
+                    <img src="{% static 'img/edit.png' %}">
+                    <span>Update Depart</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/edit/">
+                    <img src="{% static 'img/update.png' %}">
+                    <span>Edit Info</span>
+                </a>
+            </li>
+        </ol>
+    </div>
+
+    <div class = "middle-page">
+        <div class="mid-pag-container">
+            <img src="{% static 'img/student.png' %}">
+                <h3>
+                    Welcome to student Affairs Website
+                    Here you can find all your reports and details
+                </h3>
+        </div>
+        <div class="mid-page-btn">
+            <a href="/view/">
+                <h3 class="btn-h3">
+                    Student Table
+                </h3>
+            </a>
+            <label class="btn-lb">
+                Show All Student And Search by name
+            </label>
+        </div>
+        <div class="mid-page-btn">
+            <a href="/add/">
+                <h3 class="btn-h3">
+                    Register
+                </h3>
+            </a>
+            <label class="btn-lb">
+                To Add a new Student
+            </label>
+        </div>
+        <div class="mid-page-btn">
+            <a href="/edit/">
+                <h3 class="btn-h3">
+                    Edit Information
+                </h3>
+            </a>
+            <label class="btn-lb">
+                To edit information of student
+            </label>
+        </div>
+        <div class="mid-page-btn">
+            <a href="/update/">
+                <h3 class="btn-h3">
+                    Update Department
+                </h3>
+            </a>
+            <label class="btn-lb">
+                Assign Department to student in level 3
+            </label>
+        </div>
+    </div>
+</div>
+</body>
+</html>
