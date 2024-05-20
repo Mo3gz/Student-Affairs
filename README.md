@@ -36,7 +36,7 @@ The game includes a graphical user interface for an engaging playing experience.
 Clone the project
 
 ```bash
-  git clone https://github.com/YourUsername/Othello-Game
+  https://github.com/Mo3gz/Student-Affairs/
 ```
 
 Set up the environment
